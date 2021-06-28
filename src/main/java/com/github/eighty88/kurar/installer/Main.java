@@ -1,6 +1,6 @@
 package com.github.eighty88.kurar.installer;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,11 +8,11 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Main extends JFrame {
+public class Main {
     public static void main(String[] args) {
         downloadFileFromUrl("https://github.com/Palpunte-Union/KurarClient-Launcher/releases/download/Release-b/KurarClient.jar", new File(getKurarDirectory(), "KurarClient.jar"));
         downloadFileFromUrl("https://github.com/Palpunte-Union/KurarClient-Launcher/releases/download/Release-b/KurarClient.json", new File(getKurarDirectory(), "KurarClient.json"));
-        JOptionPane.showMessageDialog(new Main(), "KurarClient was successfully installed.");
+        JOptionPane.showMessageDialog(null, "KurarClient was successfully installed.");
     }
 
     public static void downloadFileFromUrl(String url, File file) {
