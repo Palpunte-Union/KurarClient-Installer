@@ -19,6 +19,7 @@ public class Main {
         if (file.getParentFile() != null && !file.getParentFile().exists())
             file.getParentFile().mkdirs();
         try {
+            file.delete();
             HttpURLConnection con = (HttpURLConnection)(new URL(url)).openConnection();
             try(InputStream is = con.getInputStream(); FileOutputStream fos = new FileOutputStream(file)) {
                 byte[] buff = new byte[8192];
